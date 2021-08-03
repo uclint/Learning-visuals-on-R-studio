@@ -27,21 +27,17 @@ relationship between flipper length and body mass
 
     ggplot(data = penguins)+ geom_point(mapping = aes(x=flipper_length_mm, y = body_mass_g))
 
-    ## Warning: Removed 2 rows containing missing values (geom_point).
+![image](https://user-images.githubusercontent.com/86573734/128097387-363a8c71-b05c-4c94-b9d0-98205cd76bcc.png)
 
-![](Visuals_files/figure-markdown_strict/unnamed-chunk-1-1.png)
 
     ggplot(data=penguins, mapping = aes(x= flipper_length_mm, y = body_mass_g)) + geom_point()
 
-    ## Warning: Removed 2 rows containing missing values (geom_point).
-
-![](Visuals_files/figure-markdown_strict/unnamed-chunk-1-2.png)
+ ![image](https://user-images.githubusercontent.com/86573734/128097465-8220c22b-68e7-4f5d-b8f7-d557b3c2d901.png)
 
     ggplot(penguins, aes(flipper_length_mm, body_mass_g))+geom_point()
+    
+![image](https://user-images.githubusercontent.com/86573734/128097479-790db66b-8357-448b-8420-76b46c2b5467.png)
 
-    ## Warning: Removed 2 rows containing missing values (geom_point).
-
-![](Visuals_files/figure-markdown_strict/unnamed-chunk-1-3.png)
 
 ## Facet\_wrap
 
@@ -52,9 +48,8 @@ seperately
       geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) + 
       facet_wrap(~species)
 
-    ## Warning: Removed 2 rows containing missing values (geom_point).
+![image](https://user-images.githubusercontent.com/86573734/128097528-eedfa6a6-75c9-431e-8479-934f28651478.png)
 
-![](Visuals_files/figure-markdown_strict/unnamed-chunk-2-1.png)
 
 ## facet\_grid
 
@@ -62,9 +57,8 @@ seperately
       geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
       facet_grid(species~sex)
 
-    ## Warning: Removed 2 rows containing missing values (geom_point).
+![image](https://user-images.githubusercontent.com/86573734/128097597-dbbef80a-c09d-444d-93c9-382ddf599478.png)
 
-![](Visuals_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
 ## labels and annotations
 
@@ -74,7 +68,5 @@ Adding titles, subtitles and captions to plots
       geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species))+
       labs(title = "Palmer Penguins: Body Mass vs Flipper Length", subtitle = "Sample of Three Penguin Species", caption = "Data collected by Dr. Kristen Gorman")+
       annotate("text", x = 220, y = 3500, label = "The Gentoos are the largest", color = "gold", fontface = "bold")
+![image](https://user-images.githubusercontent.com/86573734/128097636-bf7a3e75-9480-44a3-8e09-fcb59fccaa29.png)
 
-    ## Warning: Removed 2 rows containing missing values (geom_point).
-
-![](Visuals_files/figure-markdown_strict/unnamed-chunk-4-1.png)
