@@ -1,0 +1,48 @@
+---
+title: "Visualization with R"
+author: "Uche"
+date: "8/3/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+## Setting up my environment
+Notes: loading R packages necessary for visuals.including the "palmer penguins" packages
+```{r loading packages}
+library(tidyverse)
+library(ggplot2)
+library(palmerpenguins)
+```
+
+## Scatterplot
+Trying out different ggplot format for a scatter plot showing relationship between flipper length and body mass
+```{r}
+ggplot(data = penguins)+ geom_point(mapping = aes(x=flipper_length_mm, y = body_mass_g))
+ggplot(data=penguins, mapping = aes(x= flipper_length_mm, y = body_mass_g)) + geom_point()
+ggplot(penguins, aes(flipper_length_mm, body_mass_g))+geom_point()
+```
+
+## Facet_wrap
+Using facet wrap to create multiple chart plots to view each specie seperately
+```{r}
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) + 
+  facet_wrap(~species)
+```
+
+## facet_grid
+```{r}
+ggplot(data = penguins)+
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  facet_grid(species~sex)
+```
+
+## labels and annotations
+Adding titles, subtitles and captions to plots
+```{r}
+ggplot(data = penguins)+
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color = species))+
+  labs(title = "Palmer Penguins: Body Mass vs Flipper Length", subtitle = "Sample of Three Penguin Species", caption = "Data collected by Dr. Kristen Gorman")+
+  annotate("text", x = 220, y = 3500, label = "The Gentoos are the largest", color = "gold", fontface = "bold")
+```
+
